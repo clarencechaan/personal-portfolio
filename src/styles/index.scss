@@ -1,0 +1,21 @@
+body {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  background-color: #0c0d13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.background {
+  position: fixed;
+  z-index: -2;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+}
