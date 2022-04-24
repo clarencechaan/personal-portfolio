@@ -7,8 +7,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 56px;
+  font-size: 42px;
   font-weight: 300;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: perspective(1000px) translateZ(100px);
+}
+
+.hero-content > div:first-child {
+  animation: focus-in 2s;
+}
+
+.hero-content > div:nth-child(2) {
+  animation: focus-in 2s;
 }
 
 .my-name {
@@ -30,6 +48,8 @@
   align-items: center;
   justify-content: center;
   column-gap: 8px;
+  animation: focus-in 2s;
+  z-index: 2;
 }
 
 .view-my-work-btn::before,
@@ -77,5 +97,18 @@
     width: 175px;
     height: 40px;
     font-size: 16px;
+  }
+}
+
+@keyframes focus-in {
+  0% {
+    opacity: 0;
+    transform: scale(2);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
   }
 }

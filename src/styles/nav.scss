@@ -1,4 +1,43 @@
 .nav-bar {
-    height: 1200px;
-    // background-color: black;
+  height: 60px;
+  width: 100%;
+  //   background-color: rgba(29, 41, 57, 0.5);
+  background-color: rgba(21, 32, 46, 0.75);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  column-gap: 24px;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 0 80px 0 80px;
+}
+
+.nav-bar button {
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.nav-bar button:hover {
+  color: rgb(211, 72, 72);
+}
+
+@media (max-width: 800px) {
+  .nav-bar {
+    justify-content: center;
+    height: 44px;
+  }
+
+  .nav-bar button {
+    font-size: 16px;
+  }
 }
