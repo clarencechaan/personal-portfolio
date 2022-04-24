@@ -4,6 +4,7 @@ import "./styles/hero.scss";
 import "./styles/stars.scss";
 import "./styles/nav.scss";
 import "./styles/about.scss";
+import "./styles/projects.scss";
 
 const stars = document.querySelector(".stars");
 
@@ -31,21 +32,21 @@ hero.addEventListener("mousemove", (e) => {
   }deg) rotateY(${xDiffPercent * 10}deg) translateZ(100px)`;
 });
 
+// slide in on scroll
+window.addEventListener("scroll", () => {
+  techsSlide();
+  bioSlide();
+  projectsSlide();
+});
+
 const technologies = document.querySelector(".technologies");
 const techs = document.querySelectorAll(".tech");
-const bio = document.querySelector(".bio");
-const codeImg = document.querySelector(".code-img");
-const bioDesc = document.querySelector(".bio-desc");
-window.addEventListener("scroll", () => {
+
+function techsSlide() {
   const technologiesCenter =
     technologies.getBoundingClientRect().top + technologies.offsetHeight / 2;
-  const bioCenter = bio.getBoundingClientRect().top + bio.offsetHeight / 2;
   const techDiffPercent =
     (window.innerHeight / 2 - technologiesCenter) / technologies.offsetHeight;
-  const bioDiffPercent =
-    (window.innerHeight / 2 - bioCenter) / bio.offsetHeight;
-
-  console.log(techDiffPercent);
   for (let i = 0; i < techs.length; i++) {
     if (techDiffPercent >= 0.5) {
       techs[i].style.transform = `translateX(${
@@ -59,7 +60,16 @@ window.addEventListener("scroll", () => {
       techs[i].style.transform = "translateX(0)";
     }
   }
+}
 
+const bio = document.querySelector(".bio");
+const codeImg = document.querySelector(".code-img");
+const bioDesc = document.querySelector(".bio-desc");
+
+function bioSlide() {
+  const bioCenter = bio.getBoundingClientRect().top + bio.offsetHeight / 2;
+  const bioDiffPercent =
+    (window.innerHeight / 2 - bioCenter) / bio.offsetHeight;
   if (bioDiffPercent >= 0.5) {
     codeImg.style.transform = `translateX(${(bioDiffPercent - 0.5) * 50}%)`;
     bioDesc.style.transform = `translateX(${(bioDiffPercent - 0.5) * 30}%)`;
@@ -70,4 +80,67 @@ window.addEventListener("scroll", () => {
     codeImg.style.transform = "translateX(0)";
     bioDesc.style.transform = "translateX(0)";
   }
-});
+}
+
+// slide in on scroll for project section
+const projects = document.querySelectorAll(".project");
+const projectDescs = document.querySelectorAll(".project-desc");
+const projectTitles = document.querySelectorAll(".project-title");
+const projectDescTexts = document.querySelectorAll(".project-desc-text");
+const projectBtns = document.querySelectorAll(".main_div");
+const projectVids = document.querySelectorAll(".project > video");
+
+function projectsSlide() {
+  for (let i = 0; i < projects.length; i++) {
+    const projectCenter =
+      projects[i].getBoundingClientRect().top + projects[i].offsetHeight / 2;
+    const projDiffPercent =
+      (window.innerHeight / 2 - projectCenter) / projects[i].offsetHeight;
+    if (projDiffPercent >= 0.5) {
+      projectDescs[i].style.transform = `translateX(${
+        -(projDiffPercent - 0.5) * 125
+      }%)`;
+      projectTitles[i].style.transform = `translateX(${
+        -(projDiffPercent - 0.5) * 25
+      }%)`;
+      projectDescTexts[i].style.transform = `translateX(${
+        -(projDiffPercent - 0.5) * 50
+      }%)`;
+      projectBtns[2 * i].style.transform = `translateX(${
+        -(projDiffPercent - 0.5) * 75
+      }%)`;
+      projectBtns[2 * i + 1].style.transform = `translateX(${
+        -(projDiffPercent - 0.5) * 100
+      }%)`;
+      projectVids[i].style.transform = `translateX(${
+        -(projDiffPercent - 0.5) * 50
+      }%)`;
+    } else if (projDiffPercent <= -0.5) {
+      projectDescs[i].style.transform = `translateX(${
+        -(projDiffPercent + 0.5) * 125
+      }%)`;
+      projectTitles[i].style.transform = `translateX(${
+        -(projDiffPercent + 0.5) * 25
+      }%)`;
+      projectDescTexts[i].style.transform = `translateX(${
+        -(projDiffPercent + 0.5) * 50
+      }%)`;
+      projectBtns[2 * i].style.transform = `translateX(${
+        -(projDiffPercent + 0.5) * 75
+      }%)`;
+      projectBtns[2 * i + 1].style.transform = `translateX(${
+        -(projDiffPercent + 0.5) * 100
+      }%)`;
+      projectVids[i].style.transform = `translateX(${
+        -(projDiffPercent + 0.5) * 50
+      }%)`;
+    } else {
+      projectDescs[i].style.transform = "translateX(0)";
+      projectTitles[i].style.transform = "translateX(0)";
+      projectDescTexts[i].style.transform = "translateX(0)";
+      projectBtns[2 * i].style.transform = "translateX(0)";
+      projectBtns[2 * i + 1].style.transform = "translateX(0)";
+      projectVids[i].style.transform = "translateX(0)";
+    }
+  }
+}

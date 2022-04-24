@@ -1,7 +1,6 @@
 .nav-bar {
   height: 60px;
   width: 100%;
-  //   background-color: rgba(29, 41, 57, 0.5);
   background-color: rgba(21, 32, 46, 0.75);
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
   position: sticky;
@@ -11,7 +10,7 @@
   align-items: center;
   justify-content: end;
   column-gap: 24px;
-  z-index: 2;
+  z-index: 3;
   box-sizing: border-box;
   padding: 0 80px 0 80px;
 }

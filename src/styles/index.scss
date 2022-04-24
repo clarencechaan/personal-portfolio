@@ -7,8 +7,10 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   font-size: 18px;
+  font-weight: 300;
 }
 
 .background {
@@ -29,16 +31,24 @@ h1 {
 
 h1.shadow {
   position: absolute;
-  transform: translate(50px, 20px) scale(1.5);
+  transform: translate(30%, 25%) scale(1.5);
+  opacity: 0.05;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+h2.shadow {
+  position: absolute;
+  transform: translate(30%, 35%) scale(1.5);
   opacity: 0.05;
 }
 
 @media (max-width: 800px) {
   h1 {
     font-size: 44px;
-  }
-
-  h1.shadow {
-    transform: translate(35px, 10px) scale(1.5);
   }
 }

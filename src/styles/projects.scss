@@ -1,0 +1,152 @@
+.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  position: relative;
+  box-sizing: border-box;
+  height: 2000px;
+}
+
+.projects-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.project {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 48px;
+  box-sizing: border-box;
+  gap: 24px;
+}
+
+.project video {
+  width: 70%;
+}
+
+.project-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 12px;
+  z-index: 2;
+  min-width: 250px;
+}
+
+.project-title {
+  display: flex;
+}
+
+.project-desc-text {
+  line-height: 24px;
+}
+
+.project-desc-btns {
+  display: flex;
+  // flex-direction: column;
+  margin-top: 30px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.main_div {
+  --color: rgb(211, 72, 72);
+  position: relative;
+  z-index: 1;
+  margin-left: 7px;
+  margin-top: 7px;
+  width: 200px;
+  height: 50px;
+}
+
+.main_div::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  top: -7px;
+  left: -7px;
+  z-index: -5;
+  border-top: 1px solid var(--color);
+  border-left: 1px solid var(--color);
+  transition: 0.5s;
+}
+
+.main_div::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  bottom: -7px;
+  right: -7px;
+  z-index: -5;
+  border-right: 1px solid var(--color);
+  border-bottom: 1px solid var(--color);
+  transition: 0.5s;
+}
+
+.main_div:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.main_div:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.main_div button {
+  font-size: 20px;
+  background: transparent;
+  color: rgb(211, 72, 72);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  border: 1px solid rgb(211, 72, 72);
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+}
+
+.main_div button:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 1000px) {
+  .project {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-right: 48px;
+  }
+
+  .project video {
+    width: 100%;
+  }
+
+  .project-desc {
+    background-color: rgba(21, 32, 46, 0.75);
+    backdrop-filter: blur(10px);
+    padding: 0 24px 24px 24px;
+    box-sizing: border-box;
+    margin: -64px 24px 0 24px;
+  }
+}
+
+@media (max-width: 550px) {
+  .project {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .project-desc {
+    margin-left: 48px;
+    margin-right: 48px;
+  }
+}
