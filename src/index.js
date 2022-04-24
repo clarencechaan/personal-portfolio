@@ -47,6 +47,9 @@ function techsSlide() {
     technologies.getBoundingClientRect().top + technologies.offsetHeight / 2;
   const techDiffPercent =
     (window.innerHeight / 2 - technologiesCenter) / technologies.offsetHeight;
+  if (Math.abs(techDiffPercent) > 1.5) {
+    return;
+  }
   for (let i = 0; i < techs.length; i++) {
     if (techDiffPercent >= 0.5) {
       techs[i].style.transform = `translateX(${
@@ -70,6 +73,9 @@ function bioSlide() {
   const bioCenter = bio.getBoundingClientRect().top + bio.offsetHeight / 2;
   const bioDiffPercent =
     (window.innerHeight / 2 - bioCenter) / bio.offsetHeight;
+  if (Math.abs(bioDiffPercent) > 1.5) {
+    return;
+  }
   if (bioDiffPercent >= 0.5) {
     codeImg.style.transform = `translateX(${(bioDiffPercent - 0.5) * 50}%)`;
     bioDesc.style.transform = `translateX(${(bioDiffPercent - 0.5) * 30}%)`;
@@ -96,6 +102,9 @@ function projectsSlide() {
       projects[i].getBoundingClientRect().top + projects[i].offsetHeight / 2;
     const projDiffPercent =
       (window.innerHeight / 2 - projectCenter) / projects[i].offsetHeight;
+    if (Math.abs(projDiffPercent) > 1.5) {
+      return;
+    }
     if (projDiffPercent >= 0.5) {
       projectDescs[i].style.transform = `translateX(${
         -(projDiffPercent - 0.5) * 125
