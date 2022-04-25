@@ -1,5 +1,4 @@
 .about {
-  // height: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -107,6 +106,14 @@
 }
 
 @media (max-width: 550px) {
+  .about {
+    padding: 0 24px 0 24px;
+  }
+
+  .bio-desc {
+    line-height: 26px;
+  }
+
   .technologies {
     flex-direction: row;
   }

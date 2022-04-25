@@ -8,9 +8,13 @@ body {
   align-items: center;
   min-height: 100vh;
   overflow-y: auto;
-  overflow-x: hidden;
   font-size: 18px;
   font-weight: 300;
+  z-index: 1;
+}
+
+body > * {
+  overflow-x: hidden;
 }
 
 .background {
@@ -50,5 +54,11 @@ h2.shadow {
 @media (max-width: 800px) {
   h1 {
     font-size: 44px;
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    margin-bottom: 24px;
   }
 }

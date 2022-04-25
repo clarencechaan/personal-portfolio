@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: end;
@@ -38,5 +39,13 @@
 
   .nav-bar button {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 550px) {
+  .nav-bar {
+    column-gap: 0;
+    padding: 0;
+    justify-content: space-evenly;
   }
 }
