@@ -5,6 +5,7 @@ import "./styles/stars.scss";
 import "./styles/nav.scss";
 import "./styles/about.scss";
 import "./styles/projects.scss";
+import "./styles/contact.scss";
 
 const stars = document.querySelector(".stars");
 
@@ -105,7 +106,7 @@ const projectDescs = document.querySelectorAll(".project-desc");
 const projectTitles = document.querySelectorAll(".project-title");
 const projectDescTexts = document.querySelectorAll(".project-desc-text");
 const projectBtns = document.querySelectorAll(".main_div");
-const projectVids = document.querySelectorAll(".project > video");
+const projectVids = document.querySelectorAll(".project > .vid-container");
 
 function projectsSlide() {
   for (let i = 0; i < projects.length; i++) {
@@ -137,7 +138,7 @@ function projectsSlide() {
         -(projDiffPercent - 0.5) * 100 * direction
       }%)`;
       projectVids[i].style.transform = `translateX(${
-        -(projDiffPercent - 0.5) * 25 * direction
+        -(projDiffPercent - 0.5) * 50 * direction
       }%)`;
     } else if (projDiffPercent <= -0.5) {
       projectDescs[i].style.transform = `translateX(${
@@ -156,7 +157,7 @@ function projectsSlide() {
         -(projDiffPercent + 0.5) * 100 * direction
       }%)`;
       projectVids[i].style.transform = `translateX(${
-        -(projDiffPercent + 0.5) * 25 * direction
+        -(projDiffPercent + 0.5) * 50 * direction
       }%)`;
     } else {
       projectDescs[i].style.transform = "translateX(0)";

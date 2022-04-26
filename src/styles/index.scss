@@ -51,6 +51,12 @@ h2.shadow {
   opacity: 0.05;
 }
 
+.footer {
+  height: 175px;
+  width: 100%;
+  background-color: rgba(21, 32, 46, 0.75);
+}
+
 @media (max-width: 800px) {
   h1 {
     font-size: 44px;
