@@ -16,18 +16,27 @@
   padding: 0 80px 0 80px;
 }
 
-.nav-bar button {
+.nav-bar a {
   font-family: inherit;
   background-color: transparent;
   border: none;
   color: white;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
   transition: 0.3s;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.nav-bar button:hover {
+.nav-bar a.highlighted {
+  color: rgb(211, 72, 72);
+  border-bottom: 4px solid rgb(211, 72, 72);
+}
+
+.nav-bar a:hover {
   color: rgb(211, 72, 72);
 }
 

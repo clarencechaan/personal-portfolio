@@ -5,6 +5,7 @@
     <title>Clarence Chan | Front-End Web Developer</title>
     <script src="main.js" defer></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="./scrolls.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,20 +21,24 @@
   <body>
     <div class="background"></div>
     <div class="stars"></div>
-    <div class="hero">
+    <div class="hero section" id="home">
       <div class="hero-content">
         <div>Hi, I'm <span class="my-name">Clarence.</span></div>
         <div>I'm a front-end web developer.</div>
-        <button class="view-my-work-btn">
-          View my work <i class="ph-arrow-down"></i>
-        </button>
+        <a href="#about">
+          <button class="view-my-work-btn">
+            View my work <i class="ph-arrow-down"></i>
+          </button>
+        </a>
       </div>
     </div>
     <nav class="nav-bar">
-      <button>home</button><button>about</button><button>projects</button
-      ><button>contact</button>
+      <a href="#home" id="tab-home">home</a>
+      <a href="#about" id="tab-about">about</a>
+      <a href="#projects" id="tab-projects">projects</a>
+      <a href="#contact" id="tab-contact">contact</a>
     </nav>
-    <div class="about">
+    <div class="about section" id="about">
       <h1>about.</h1>
       <h1 class="shadow">about.</h1>
       <div class="about-content">
@@ -99,7 +104,7 @@
         </div>
       </div>
     </div>
-    <div class="projects">
+    <div class="projects section" id="projects">
       <h1>projects.</h1>
       <h1 class="shadow">projects.</h1>
       <div class="projects-content">
@@ -232,7 +237,7 @@
         </div>
       </div>
     </div>
-    <div class="contact">
+    <div class="contact section" id="contact">
       <h1>contact.</h1>
       <h1 class="shadow">contact.</h1>
       <div class="contact-content">
