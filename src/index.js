@@ -28,7 +28,6 @@ if (!isTouchDevice()) {
     const yDist = e.pageY - yPos;
     const xDiffPercent = xDist / xPos;
     const yDiffPercent = yDist / yPos;
-    console.log(xDiffPercent, yDiffPercent);
     heroContent.style.transform = `perspective(1000px) rotateX(${
       -yDiffPercent * 10
     }deg) rotateY(${xDiffPercent * 10}deg) translateZ(100px)`;
@@ -49,6 +48,7 @@ window.addEventListener("scroll", () => {
   techsSlide();
   bioSlide();
   projectsSlide();
+  contactSlide();
 });
 
 const technologies = document.querySelector(".technologies");
@@ -105,7 +105,7 @@ const projects = document.querySelectorAll(".project");
 const projectDescs = document.querySelectorAll(".project-desc");
 const projectTitles = document.querySelectorAll(".project-title");
 const projectDescTexts = document.querySelectorAll(".project-desc-text");
-const projectBtns = document.querySelectorAll(".main_div");
+const projectBtns = document.querySelectorAll(".project-desc .main_div");
 const projectVids = document.querySelectorAll(".project > .vid-container");
 
 function projectsSlide() {
@@ -114,14 +114,11 @@ function projectsSlide() {
       projects[i].getBoundingClientRect().top + projects[i].offsetHeight / 2;
     const projDiffPercent =
       (window.innerHeight / 2 - projectCenter) / projects[i].offsetHeight;
-    // if (Math.abs(projDiffPercent) > 1.5) {
-    //   return;
-    // }
     let direction = 1;
     if (i % 2 !== 0) {
       direction = -1;
     }
-    if (projDiffPercent >= 0.5) {
+    if (projDiffPercent >= 0.5 && projDiffPercent <= 1.5) {
       projectDescs[i].style.transform = `translateX(${
         -(projDiffPercent - 0.5) * 75 * direction
       }%)`;
@@ -140,7 +137,7 @@ function projectsSlide() {
       projectVids[i].style.transform = `translateX(${
         -(projDiffPercent - 0.5) * 50 * direction
       }%)`;
-    } else if (projDiffPercent <= -0.5) {
+    } else if (projDiffPercent <= -0.5 && projDiffPercent >= -1.5) {
       projectDescs[i].style.transform = `translateX(${
         -(projDiffPercent + 0.5) * 75 * direction
       }%)`;
@@ -167,5 +164,61 @@ function projectsSlide() {
       projectBtns[2 * i + 1].style.transform = "translateX(0)";
       projectVids[i].style.transform = "translateX(0)";
     }
+  }
+}
+
+const contactContent = document.querySelector(".contact-content");
+const contactText = document.querySelector(".contact-text");
+const contactInputs = document.querySelectorAll("form input");
+const contactTextarea = document.querySelector("textarea");
+const contactButton = document.querySelector("form .main_div");
+
+function contactSlide() {
+  const contactCenter =
+    contactContent.getBoundingClientRect().top +
+    contactContent.offsetHeight / 2;
+  const contactDiffPercent =
+    (window.innerHeight / 2 - contactCenter) / contactContent.offsetHeight;
+  if (Math.abs(contactDiffPercent) > 1.5) {
+    return;
+  }
+  if (contactDiffPercent >= 0.5) {
+    contactText.style.transform = `translateX(${
+      (contactDiffPercent - 0.5) * 25
+    }%)`;
+    contactInputs[0].style.transform = `translateX(${
+      (contactDiffPercent - 0.5) * 40
+    }%)`;
+    contactInputs[1].style.transform = `translateX(${
+      (contactDiffPercent - 0.5) * 55
+    }%)`;
+    contactTextarea.style.transform = `translateX(${
+      (contactDiffPercent - 0.5) * 70
+    }%)`;
+    contactButton.style.transform = `translateX(${
+      (contactDiffPercent - 0.5) * 85
+    }%)`;
+  } else if (contactDiffPercent <= -0.5) {
+    contactText.style.transform = `translateX(${
+      -(contactDiffPercent + 0.5) * 25
+    }%)`;
+    contactInputs[0].style.transform = `translateX(${
+      -(contactDiffPercent + 0.5) * 40
+    }%)`;
+    contactInputs[1].style.transform = `translateX(${
+      -(contactDiffPercent + 0.5) * 55
+    }%)`;
+    contactTextarea.style.transform = `translateX(${
+      -(contactDiffPercent + 0.5) * 70
+    }%)`;
+    contactButton.style.transform = `translateX(${
+      -(contactDiffPercent + 0.5) * 85
+    }%)`;
+  } else {
+    contactText.style.transform = "translateX(0)";
+    contactInputs[0].style.transform = "translateX(0)";
+    contactInputs[1].style.transform = "translateX(0)";
+    contactTextarea.style.transform = "translateX(0)";
+    contactButton.style.transform = "translateX(0)";
   }
 }
