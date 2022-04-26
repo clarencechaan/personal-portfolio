@@ -44,6 +44,9 @@ function isTouchDevice() {
 }
 
 function highlightTab(id) {
+  if (isTouchDevice()) {
+    return;
+  }
   const tabs = document.querySelectorAll(".nav-bar a");
   for (const tab of tabs) {
     tab.classList.remove("highlighted");

@@ -36,8 +36,10 @@
   border-bottom: 4px solid rgb(211, 72, 72);
 }
 
-.nav-bar a:hover {
-  color: rgb(211, 72, 72);
+@media (hover: hover) and (pointer: fine) {
+  .nav-bar a:hover {
+    color: rgb(211, 72, 72);
+  }
 }
 
 @media (max-width: 800px) {

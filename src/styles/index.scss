@@ -35,6 +35,10 @@ a {
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #000000 100%);
 }
 
+.section {
+  scroll-margin-top: 44px;
+}
+
 h1 {
   font-weight: 300;
   font-size: 56px;
@@ -60,7 +64,7 @@ h2.shadow {
 }
 
 .footer {
-  height: 175px;
+  height: 160px;
   width: 100%;
   background-color: rgba(21, 32, 46, 0.75);
   backdrop-filter: blur(4px);
