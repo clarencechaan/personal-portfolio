@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/clarencechaan/personal-portfolio/issues"
   },
-  "homepage": "https://github.com/clarencechaan/personal-portfolio#readme",
+  "homepage": "https://clarencechaan.github.io/personal-portfolio/",
   "devDependencies": {
     "css-loader": "^6.7.1",
     "gh-pages": "^3.2.3",
