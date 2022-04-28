@@ -7,6 +7,10 @@ import "./styles/about.scss";
 import "./styles/projects.scss";
 import "./styles/contact.scss";
 
+// display html when styling is loaded
+const wrapper = document.querySelector(".wrapper");
+wrapper.style.display = "initial";
+
 const stars = document.querySelector(".stars");
 
 // draw stars
@@ -62,6 +66,3 @@ for (const sec of sections) {
     highlightTab(sec.id);
   };
 }
-
-const wrapper = document.querySelector(".wrapper");
-wrapper.style.display = "initial";

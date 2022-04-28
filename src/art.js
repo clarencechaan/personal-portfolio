@@ -3,6 +3,10 @@ import "./styles/stars.scss";
 import "./styles/art.scss";
 import "./styles/nav.scss";
 
+// display html when styling is loaded
+const wrapper = document.querySelector(".wrapper");
+wrapper.style.display = "initial";
+
 const stars = document.querySelector(".stars");
 
 // draw stars
