@@ -47,19 +47,28 @@ function isTouchDevice() {
   );
 }
 
+const tabs = document.querySelectorAll(".nav-bar a");
 function highlightTab(id) {
+  console.log(id);
   if (isTouchDevice()) {
     return;
   }
-  const tabs = document.querySelectorAll(".nav-bar a");
   for (const tab of tabs) {
     tab.classList.remove("highlighted");
-    if (tab.id === "tab-" + id) {
+    if (tab.id === "tab-" + id || tab.id === id) {
       tab.classList.add("highlighted");
     }
   }
 }
 
+// highlights tab on click
+for (const tab of tabs) {
+  tab.onclick = () => {
+    highlightTab(tab.id);
+  };
+}
+
+// highlight tab on mouseenter of a section
 const sections = document.querySelectorAll(".section");
 for (const sec of sections) {
   sec.onmouseenter = () => {
