@@ -62,3 +62,6 @@ for (const sec of sections) {
     highlightTab(sec.id);
   };
 }
+
+const wrapper = document.querySelector(".wrapper");
+wrapper.style.display = "initial";
