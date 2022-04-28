@@ -4,7 +4,6 @@ html {
 
 .wrapper {
   position: relative;
-  overflow-x: initial;
 }
 
 body {
@@ -22,7 +21,7 @@ body {
   z-index: 1;
 }
 
-body > * {
+.wrapper > * {
   overflow-x: hidden;
 }
 
