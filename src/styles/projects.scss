@@ -23,7 +23,7 @@
 .project {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   gap: 36px;
@@ -41,6 +41,7 @@
 
 .project .vid-container {
   flex: 1;
+  max-width: 1000px;
 }
 
 .project-desc {
