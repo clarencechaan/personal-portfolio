@@ -35,6 +35,12 @@
   line-height: 34px;
 }
 
+.bio-desc a {
+  color: rgb(211, 72, 72);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .technologies {
   display: flex;
   gap: 24px;

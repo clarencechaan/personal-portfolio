@@ -69,6 +69,41 @@ h2.shadow {
   background-color: rgba(21, 32, 46, 0.75);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  overflow: initial;
+  position: relative;
+}
+
+.footer .back-to-top {
+  position: absolute;
+  top: -15px;
+  background-color: rgb(211, 72, 72);
+  color: white;
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer i {
+  font-size: 48px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer i:hover {
+  color: rgb(211, 72, 72);
 }
 
 @media (max-width: 800px) {

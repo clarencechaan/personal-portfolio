@@ -1,7 +1,11 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+    art: "./src/art.js",
+  },
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
@@ -23,7 +27,21 @@ module.exports = {
     ],
   },
   output: {
-    filename: "main.js",
+    filename: "[name].[contenthash].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      inject: true,
+      chunks: ["index"],
+      filename: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/art.html",
+      inject: true,
+      chunks: ["art"],
+      filename: "art.html",
+    }),
+  ],
 };

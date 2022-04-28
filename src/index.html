@@ -45,13 +45,15 @@
         <div class="bio">
           <img src="./assets/code-svgrepo-com.svg" alt="" class="code-img" />
           <p class="bio-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Enamoured with technology from a young age, I gained a deep sense of
+            satisfaction from tinkering with tech and figuring out how things
+            work. Naturally, a fascination for programming blossomed as I became
+            exposed to the world of software. As a problem-solver and an
+            <a href="/art.html">artist in my free time</a>, I hold a strong
+            appreciation for both the logical and creative sides of web
+            development alike. I’m based in the Greater Toronto Area and hold an
+            Honours Bachelor of Science in Computer Science from the University
+            of Toronto.
           </p>
         </div>
         <div class="technologies">
@@ -245,20 +247,43 @@
           If you'd like to get in touch with me, feel free to send me an e-mail
           or message using the form below.
         </div>
-        <form action="#">
-          <input type="text" placeholder="Your name" /><input
+        <form action="https://formspree.io/f/xrgjolga" method="POST">
+          <input
+            type="text"
+            placeholder="Your name"
+            name="name"
+            id="name-input"
+            required
+          /><input
             type="email"
             placeholder="Your e-mail"
+            id="email-input"
+            name="email"
+            required
           />
-          <textarea name="" id="" placeholder="Your message"></textarea>
+          <textarea
+            name=""
+            id="message-textarea"
+            placeholder="Your message"
+            name="message"
+            required
+          ></textarea>
           <div class="main_div">
-            <button type="button" id="submit-email">
+            <button type="submit" id="submit-email">
               submit<i class="ph-arrow-right"></i>
             </button>
           </div>
         </form>
       </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <a href="#home" class="back-to-top">back to top</a>
+      <a href="https://github.com/clarencechaan"
+        ><i class="devicon-github-original"> </i
+      ></a>
+      <a href="mailto:kachon.chan@mail.utoronto.ca"
+        ><i class="ph-paper-plane-tilt"></i
+      ></a>
+    </div>
   </body>
 </html>
