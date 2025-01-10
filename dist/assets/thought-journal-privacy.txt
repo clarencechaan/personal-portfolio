@@ -1,0 +1,9 @@
+THOUGHT JOURNAL PRIVACY POLICY
+
+---
+
+I, the developer of this app, do not have access to any of your data.
+
+Your journal entries are stored only on your device and may be backed up to your iCloud account. All data synced with iCloud is subject to Apple’s privacy policy.
+
+No other data is collected or stored.
